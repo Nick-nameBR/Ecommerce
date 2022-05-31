@@ -13,8 +13,8 @@
     
     class Mailer{
     
-        const USERNAME = "seu e-mail";
-        const PASSWORD = "senha e-mail";
+        const USERNAME = "E-mail para envio";
+        const PASSWORD = "Senha do E-mail";
         const NAME_FROM = "E-commerce Store";
             
         private $mail;
