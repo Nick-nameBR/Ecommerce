@@ -58,7 +58,7 @@
 
     });
 
-    $app->post("/admin/products/create", function(){
+    $app->post("/admin/products/create/", function(){
 
         User::verifyLogin();
 
@@ -68,7 +68,7 @@
 
         $product->save();
 
-        header("Location: /admin/products");
+        header("Location: /admin/products/");
         exit;
 
     });
@@ -120,7 +120,8 @@
 
         $product->get((int)$idproduct);
 
-        $product->delete();
+        var_dump($product->delete());
+        exit;
 
         header('Location: /admin/products/');
         exit;
