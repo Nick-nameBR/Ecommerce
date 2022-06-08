@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="product-bit-title text-center">
-                    <h2><?php echo htmlspecialchars( $category["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
+                    <h2><?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
                 </div>
             </div>
         </div>
@@ -17,34 +17,34 @@
                 <div class="product-content-right">
                     <div class="product-breadcroumb">
                         <a href="/">Home</a>
-                        <a href="">Sony Smart TV - 2015</a>
+                        <a href=""><?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a>
                     </div>
                     
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="product-images">
                                 <div class="product-main-img">
-                                    <img src="/res/site/img/product-2.jpg">
+                                    <img src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="col-sm-6">
                             <div class="product-inner">
-                                <h2 class="product-name">Sony Smart TV - 2015</h2>
+                                <h2 class="product-name"><?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
                                 <div class="product-inner-price">
-                                    <ins>$700.00</ins>
+                                    <ins>R$ <?php echo formatPrice($product["vlprice"]); ?></ins>
                                 </div>    
                                 
-                                <form action="" class="cart">
+                                <form action="/cart/<?php echo htmlspecialchars( $product["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add/" class="cart">
                                     <div class="quantity">
-                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="qtd" min="1" step="1">
                                     </div>
-                                    <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                    <button class="add_to_cart_button" type="submit">Comprar</button>
                                 </form>   
                                 
                                 <div class="product-inner-category">
-                                    <p>Categorias: <a href="#">Summer</a>.
+                                    <p>Categorias:<?php $counter1=-1;  if( isset($categories) && ( is_array($categories) || $categories instanceof Traversable ) && sizeof($categories) ) foreach( $categories as $key1 => $value1 ){ $counter1++; ?> <a href="/categories/<?php echo htmlspecialchars( $value1["idcategory"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["descategory"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a><?php } ?>.
                                 </div> 
                                 
                                 <div role="tabpanel">
